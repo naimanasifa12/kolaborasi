@@ -9,6 +9,30 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="script.js" defer></script>
 </head>
+<style>
+  .my-progress-bar {
+    width: 0%;
+    animation: my-fill-progress 2s ease-out forwards;
+    position: relative;
+  }
+
+  @keyframes my-fill-progress {
+    to {
+      width: var(--progress);
+    }
+  }
+
+  .my-progress-text {
+    position: absolute;
+    right: 0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.875rem; /* text-sm */
+    font-weight: 500;
+    color: rgb(14, 2, 2);
+  }
+</style>
+
 <body class="body">
     <nav
       class="fixed w-full bg-cream/80 backdrop-blur-md z-50 border-b border-gray-100"
@@ -60,89 +84,117 @@
   </div>
 </section>
   </section>
+
 <section class="about-me text-gray-600 body-font" id="about me">
   <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
+    
+    <!-- Gambar Profil -->
     <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
       <img class="object-cover object-center rounded-full neon-shadow" alt="hero" src="naima_nasifa-removebg-preview (1).png">
     </div>
+
+    <!-- Deskripsi -->
     <div class="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
-      <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">About me</h1>
-      <p class="mb-8 leading-relaxed"><p>Name: Naima Nasifa</p>
-        <p>Place, Date of Birth: Kab. Semarang, January 12, 2010.</p>
-        <p>Address: Sukorejo Rt.08/Rw.02 Kenteng, kec.Susukan, kab.Semarang.</p>
-        <p>Email: naimanasifa@gmail.com</p>
-        <p>Phone: ‪+6283869755015‬</p>
-        <p>Education: Vocational High School Student (SMKN 1 Tengaran).</p>
-        <p>Hobbies: Bicycle, singing, read a book.</p>
-        <p>I'm currently learning HTML, CSS, JavaScript, as well as design tools like Figma and Canva.</p>
+      <h1 class="title-font sm:text-4xl text-3xl mb-6 font-medium text-gray-900">About Me</h1>
+      
+      <!-- Data Diri -->
+      <dl class="grid grid-cols-[max-content_1fr] gap-x-4 gap-y-2 text-left text-base w-full max-w-md">
+        <dt class="font-semibold">Name:</dt>
+        <dd>Naima Nasifa</dd>
+
+        <dt class="font-semibold">Date of Birth:</dt>
+        <dd>Kab. Semarang, January 12, 2010</dd>
+
+        <dt class="font-semibold">Address:</dt>
+        <dd>Sukorejo Rt.08/Rw.02 Kenteng, Kec. Susukan, Kab. Semarang</dd>
+
+        <dt class="font-semibold">Email:</dt>
+        <dd>naimanasifa@gmail.com</dd>
+
+        <dt class="font-semibold">Phone:</dt>
+        <dd>+62 838-6975-5015</dd>
+
+        <dt class="font-semibold">Education:</dt>
+        <dd>Vocational High School Student (SMKN 1 Tengaran)</dd>
+
+        <dt class="font-semibold">Hobbies:</dt>
+        <dd>Bicycle, singing, reading books</dd>
+      </dl>
+
+      <!-- Deskripsi Tambahan -->
+      <p class="mt-6 leading-relaxed">
+        I'm currently learning HTML, CSS, JavaScript, as well as design tools like Figma and Canva.
+      </p>
     </div>
   </div>
 </section>
+
+
+
+
+  
+
+
 <section class="text-gray-800 min-h-screen flex flex-col items-center py-12 px-4">
-
   <h1 class="text-4xl font-bold mb-10">My Skills</h1>
-
   <div class="w-full max-w-xl space-y-6">
 
-    <!-- HTML -->
     <div>
-      <div class="flex justify-between mb-1">
-        <span class="font-medium">HTML</span>
-        <span>95%</span>
-      </div>
-      <div class="w-full bg-gray-300 rounded-full h-4 overflow-hidden">
-        <div class="bg-orange-500 h-4 rounded-full progress-bounce" style="--progress: 95%;"></div>
-      </div>
-    </div>
-
-    <!-- CSS -->
-    <div>
-      <div class="flex justify-between mb-1">
-        <span class="font-medium">CSS</span>
-        <span>88%</span>
-      </div>
-      <div class="w-full bg-gray-300 rounded-full h-4 overflow-hidden">
-        <div class="bg-blue-600 h-4 rounded-full progress-bounce" style="--progress: 88%;"></div>
-      </div>
-    </div>
-
-    <!-- C++ -->
-    <div>
-      <div class="flex justify-between mb-1">
-        <span class="font-medium">C++</span>
-        <span>80%</span>
-      </div>
-      <div class="w-full bg-gray-300 rounded-full h-4 overflow-hidden">
-        <div class="bg-blue-800 h-4 rounded-full progress-bounce" style="--progress: 80%;"></div>
-      </div>
-    </div>
-
-    <!-- JavaScript -->
-    <div>
-      <div class="flex justify-between mb-1">
-        <span class="font-medium">JavaScript</span>
-        <span>70%</span>
-      </div>
-      <div class="w-full bg-gray-300 rounded-full h-4 overflow-hidden">
-        <div class="bg-yellow-400 h-4 rounded-full progress-bounce" style="--progress: 82%;"></div>
-      </div>
-    </div>
-
-    <!-- Python -->
-    <div>
-      <div class="flex justify-between mb-1">
-        <span class="font-medium">Python</span>
-        <span>68%</span>
-      </div>
-      <div class="w-full bg-gray-300 rounded-full h-4 overflow-hidden">
-        <div class="bg-blue-400 h-4 rounded-full progress-bounce" style="--progress: 78%;"></div>
-      </div>
-    </div>
-
+  <div class="flex justify-between mb-1">
+    <span class="font-medium">HTML</span>
   </div>
+  <div class="w-full bg-gray-300 rounded-full h-5 overflow-hidden relative">
+    <div class="bg-blue-300 h-5 rounded-full my-progress-bar" style="--progress: 95%;">
+      <span class="my-progress-text">95%</span>
+    </div>
+  </div>
+</div>
 
+<div>
+  <div class="flex justify-between mb-1">
+    <span class="font-medium">CSS</span>
+  </div>
+  <div class="w-full bg-gray-300 rounded-full h-5 overflow-hidden relative">
+    <div class="bg-blue-300 h-5 rounded-full my-progress-bar" style="--progress: 88%;">
+      <span class="my-progress-text">88%</span>
+    </div>
+  </div> 
+</div>
+
+<div>
+  <div class="flex justify-between mb-1">
+    <span class="font-medium">C++</span>
+  </div>
+  <div class="w-full bg-gray-300 rounded-full h-5 overflow-hidden relative">
+    <div class="bg-blue-300 h-5 rounded-full my-progress-bar" style="--progress: 80%;">
+      <span class="my-progress-text">80%</span>
+    </div>
+  </div>
+</div>
+
+<div>
+  <div class="flex justify-between mb-1">
+    <span class="font-medium">JavaScript</span>
+  </div>
+  <div class="w-full bg-gray-300 rounded-full h-5 overflow-hidden relative">
+    <div class="bg-blue-300 h-5 rounded-full my-progress-bar" style="--progress: 70%;">
+      <span class="my-progress-text">70%</span>
+    </div>
+  </div>
+</div>
+
+<div>
+  <div class="flex justify-between mb-1">
+    <span class="font-medium">Python</span>
+  </div>
+  <div class="w-full bg-gray-300 rounded-full h-5 overflow-hidden relative">
+    <div class="bg-blue-300 h-5 rounded-full my-progress-bar" style="--progress: 68%;">
+      <span class="my-progress-text">68%</span>
+    </div>
+  </div>
+</div>
 </section>
-
+    
 <section class="bg-white body-font" id="my project">
   <div class="container px-5 py-24 mx-auto">
     <div class="flex flex-col text-center w-full mb-20">
@@ -220,7 +272,7 @@
 </section>
 <section class="p-10" id="contact">
     <h2 class="text-3xl font-bold text-center mb-6">Contact Me</h2>
-  
+  <br><br><br>
     <!-- Flex container -->
     <div class="flex flex-col lg:flex-row gap-10 items-start justify-center">
   
@@ -299,11 +351,11 @@
             </li>
 
             <li>
-                <a href="#about">About Me</a>
+                <a href="#about me">About Me</a>
             </li>
 
             <li>
-                <a href="#project">Project</a>
+                <a href="#my project">Project</a>
             </li>
 
             <li>
@@ -312,7 +364,7 @@
         </ul> <br>
         <hr>
         <p class="copyright">
-            © Naima Nasifa | All Right Reserved
+            © Naima Nasifa | 2025 All Right Reserved
         </p>
      </footer>
 </body>

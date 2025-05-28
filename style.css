@@ -156,8 +156,56 @@ body {
   background: #fff;
 }
 
+#about {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  color: #000;
+}
+
+#about h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 28px;
+}
+
+#about dl {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  row-gap: 10px;
+  column-gap: 20px;
+}
+
+#about dt {
+  font-weight: bold;
+}
+
+#about dd {
+  margin: 0;
+}
+
 .my skills {
   background: #84d2f6;
+}
+
+@keyframes fillBar {
+  from { width: 0; }
+  to { width: 95%; } /* Sesuaikan sesuai nilai */
+}
+
+
+
+
+
+
+
+.skill-bar {
+  height: 20px;
+  background-color: orange;
+  width: 0;
+  animation: fillBar 1s ease forwards; /* hanya sekali jalan */
 }
 
 .my project {
